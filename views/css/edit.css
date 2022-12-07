@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+html,body{
+    height: 100%;
+    place-items: center;
+    background: #fad6a5;
+}
+
+/* NAVBAR CSS */
+
+.navbar{
+    background-color: #453823;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+h1{
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 0px;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+    justify-content: flex-end;
+}
+
+li {
+    float: left;
+}
+
+.title{
+    font-family: serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: #fad6a5;
+    text-decoration: none;
+    margin: 5px;
+    padding-left: 10px;
+}
+
+.btn{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    outline: none;
+    background-color: #453823;
+    color: #fad6a5;
+    border: none;
+    height: 44;
+    width: 44;
+    padding: 7px 7px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-right: 10px;
+}
+
+.btn1{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    outline: none;
+    background-color: #453823;
+    color: #fad6a5;
+    border: none;
+    height: 44;
+    width: 44;
+    border-radius: 12px;
+    padding-top: 7px;
+    padding-bottom: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 15px;
+    transition: 0.25s;
+    margin-right: 5px;
+    align-content: center;
+    font-size: 10;
+}
+
+.btn:hover, .btn1:hover{
+    background-color: #44291C;
+    color: #fad6a5;
+}
+
+.active{
+    background-color: #44291C;
+}
+
+.search {
+    border: 1px solid #d1d5db;
+    margin-right: 1px;
+    width: 250px;
+    padding: 7px 7px;
+    border-radius: 12px;
+}
+
+a.titlelink:visited, a.titlelink:link, a.titlelink:active{
+    font-family: serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: #fad6a5;
+    text-decoration: none;
+    margin: 5px;
+}
+
+a.titlelink:hover{
+    color: #967969;
+}
+
+
+
+/* EDIT SECTION */
+
+.main_div{
+    display: flex;
+    padding-top: 20;
+    padding-bottom: 20;
+    background: #fad6a5;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+} 
+
+.edit{
+    height: 570;
+    width: 300px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+    margin: 10;
+}
+
+.title-edit{
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20;
+    text-align: center;
+}
+
+form{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 5px;
+}
+
+form .input_box{
+    height: 50px;
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+}
+
+.input_box input{
+    height: 30;
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    transition: all 0.3s ease;
+}
+
+form .input_box_bio{
+    height: 50px;
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+} 
+
+.input_box_bio input{
+    height: 70;
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    transition: all 0.3s ease;
+}
+
+.input_box_active input{
+    height: 80;
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    transition: all 0.3s ease;
+}
+
+.input_box input:focus{
+    border-color: #fad6a5;
+}
+
+.file input{
+    outline: none;
+    border: none;
+    margin-top: 10;
+    padding: 0;
+    height: 30;
+}
+
+.genre-checkbox{
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+}
+
+.genre{
+    height: 300;
+    font-size: 15;
+}
+
+.genre-checkbox input{
+    height: min-content;
+    width: 20;
+}
+
+.button{
+    margin: 5 0 5 0;
+}
+
+.bio_text{
+    height: 30%;
+}
+/* .changepwbtn{
+    text-decoration: none;
+    color: #453823;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+a.changepwbtn:hover{
+    color: #fad6a5;
+} */

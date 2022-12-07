@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+html,body{
+    height: 100%;
+    place-items: center;
+    background: #fad6a5;
+}
+
+/* NAVBAR CSS */
+
+.navbar{
+    background-color: #453823;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+h1{
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 0px;
+    font-family: serif;
+    font-weight: bold;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+    justify-content: flex-end;
+}
+
+li {
+    float: left;
+}
+
+.title{
+    font-family: serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: #fad6a5;
+    text-decoration: none;
+    margin: 5px;
+    padding-left: 10px;
+}
+
+.btn{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    outline: none;
+    background-color: #453823;
+    color: #fad6a5;
+    border: none;
+    height: 50;
+    width: 50;
+    padding: 7px 7px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-right: 10px;
+}
+
+.btn1{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    outline: none;
+    background-color: #453823;
+    color: #fad6a5;
+    border: none;
+    height: 44;
+    width: 44;
+    border-radius: 12px;
+    padding-top: 7px;
+    padding-bottom: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 15px;
+    transition: 0.25s;
+    margin-right: 5px;
+    align-content: center;
+    font-size: 10;
+}
+
+.btn:hover, .btn1:hover{
+    background-color: #44291C;
+    color: #fad6a5;
+}
+/* a.titlelink:visited, a.titlelink:link, a.titlelink:active{
+    font-family: serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: #fad6a5;
+    text-decoration: none;
+    margin: 5px;
+}*/
+
+a.titlelink:hover{
+    color: #967969;
+    text-decoration: none;
+} 
+
+a.titlelink{
+    text-decoration: none;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: #fad6a5;
+    text-decoration: none;
+    margin: 5px;
+}
+.search {
+    border: 1px solid #d1d5db;
+
+    margin-right: 1px;
+    width: 250px;
+    padding: 7px 7px;
+    border-radius: 12px;
+}
+
+.search__input {
+    border-color: transparent;
+}
+
+.book-title{
+    text-decoration: none;
+    color: #44291C;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+a.book-title:hover{
+    color: #967969;
+    text-decoration: none;
+}
+
+.book-author{
+    font-size: large;
+    text-decoration: none;
+    color: black;
+
+}
+
+
+.book-result, .user-result{
+    width: auto;
+    height: auto;
+    margin: 30 100 100 100;
+    margin-bottom: 20;
+    padding: 5;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.result-title{
+    margin-left: 10;
+    margin-top: 20;
+    font-family: serif;
+    font-weight: bold;
+}
+
+.books{
+    width: 90%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    /* Put a card in the next row when previous cards take all width */
+    flex-wrap: wrap;
+}
+
+.book{
+    flex-basis: 20%;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10;
+}
+
+.book-cover .img{
+    width: 150;
+    height: 190;
+    display: flex;
+    align-items: center;
+}
+
+.book-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: small;
+    margin: 10;
+}
+
+.profiles{
+    width: 90%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    /* Put a card in the next row when previous cards take all width */
+    flex-wrap: wrap;
+}
+
+.profile{
+    flex-basis: 20%;
+
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10;
+}
+
+.display-photo .img{
+    border-radius: 50%;
+    width: 100;
+}
+
+.username{
+    font-size: small;
+    text-align: center;
+    margin: 10;
+}
+
+.foot{
+    height: 10;
+}

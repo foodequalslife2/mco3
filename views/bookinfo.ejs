@@ -1,0 +1,210 @@
+<DOCTYPE! html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" media="all" href="../css/bookinfo.css">
+
+    <title>Book Info</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div>
+          <p class="title"><a class="titlelink" href = "/home">Literari</a></p>
+        </div>
+        <ul>
+          <li>
+            
+            <a href="/genre"><button class="btn1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+              <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+            </svg><br>genre</button></a>
+          </li>
+    
+          <li>
+            <a href="/profilepage"><button class="btn1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg><br>page</button></a>
+          </li>
+    
+          <li>
+            <a href="/"><button class="btn1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+              <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+            </svg><br>logout</button></a>
+          </li>
+          <li>
+            <div class="form">
+                <form action="/search" method="post">
+                    <input class="search" name="search" type="search" placeholder="Search">
+                    <a href="/search"><button class="btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg></button></a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+
+    <div class="main-div">
+        <div class="bookinfo">
+            <% searchresult.forEach(function(result){ %>
+
+            <div class="book">
+                <img src="../pictures/books/<%=  result.bookpicture  %>" class="img">
+            </div>
+            <div class="info">
+
+
+                <div class="title-rating">
+                    <div class="title"><%=  result.booktitle  %></div>
+                    <div class="rating">
+                        <div class="star"><i class="bi bi-star-fill"></i></div>
+                        <div class="star"><i class="bi bi-star-fill"></i></div>
+                        <div class="star"><i class="bi bi-star-fill"></i></div>
+                        <div class="star"><i class="bi bi-star-fill"></i></div>
+                        <div class="star"><i class="bi bi-star-half"></i></div>
+                        &nbsp;
+                        <p class="review-score">4.20</p>
+                    </div>
+                </div>
+                
+                <div class="author">Author: <b><%=  result.bookauthor  %></b></div>
+                <div class="publi-date">Publication Date: <b><%=  result.bookdate  %></b></div>
+                <div class="genre">Genre:<a href="" class="genre"><%=  result.bookgenre  %></a></div>
+                <br>
+                <div class="synopsis">
+                    <p>
+                        <%=  result.booksynopsis %>
+                    </p>
+                </div>
+
+                <% }); %>
+
+                <div class="status">
+                    Current Status: Finished Reading 
+                    <button type="button" class="btn-update" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>
+                
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <form action="bookinfo1(queens-gambit).html">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Change Status</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <label for="new-status">Choose a new status:</label>
+                                        <select name="new-status" id="new-status">
+                                            <option value="no-status">No status</option>
+                                            <option value="plan-on-reading">Plan on Reading</option>
+                                            <option value="currently-reading">Currently Reading</option>
+                                            <option value="finished-reading">Finished Reading</option>
+                                        </select> 
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btnclose" data-bs-dismiss="modal">Close</button>
+                                        <a href=""><button type="button" class="btn btn-save">Save changes</button></a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="comment-div">
+        <div class="comment-section">
+            <br>
+            <h3>&nbsp; Comment Section</h3>     
+            <br>
+            <textarea id="writing" name="comment-writing" rows="4" cols="20" placeholder="Enter Comment"></textarea> 
+            <div class = btn-commenting>
+                <button type="button" class="btn btn-outline-primary" id="post">Comment</button>
+                <button type="button" class="btn btn-outline-primary" id="cancel">Cancel</button>
+                <div class = "star-widget">
+                    <input type="radio" name="rate" id="1">
+                    <label for ="1" class="bi bi-star-fill star2"></label>
+                    <input type="radio" name="rate" id="2">
+                    <label for ="2" class="bi bi-star-fill star2"></label>
+                    <input type="radio" name="rate" id="3">
+                    <label for ="3" class="bi bi-star-fill star2"></label>
+                    <input type="radio" name="rate" id="4">
+                    <label for ="4" class="bi bi-star-fill star2"></label>
+                    <input type="radio" name="rate" id="5">
+                    <label for ="5" class="bi bi-star-fill star2"></label>                
+                </div>
+            </div>
+
+            <!-- first commenter  -->
+            <div class="comment">
+                <div class="info-rating">
+                    <div class="user-info">
+                        <div class="display-photo">
+                            <img src="../pictures/dp4.png" class="display-photo">
+                        </div>
+                        <div class="username">
+                            &nbsp;<a href="blank-ji.html" class="user-name">blank-ji</a>
+                        </div>
+                    </div>
+                    <div class="rate">
+                        <div class="star"><i class="bi bi-star-fill"></i></div>
+                        <div class="star"><i class="bi bi-star-fill"></i></div>
+                        <div class="star"><i class="bi bi-star-fill"></i></div>
+                        <div class="star"><i class="bi bi-star-fill"></i></div>
+                        <div class="star"><i class="bi bi-star"></i></div>
+                    </div>
+                </div>
+                <p class="user-comment">
+                    I didn't love it quite as much as the show. Where they differ I prefer the book.
+                </p>
+                <div class="reaction">
+                    <button class="thumbs-up"><i class="bi bi-hand-thumbs-up-fill"></i></button>
+                    <button class="thumbs-down"><i class="bi bi-hand-thumbs-down-fill"></i></button>
+                </div>    
+            </div>
+
+            <!-- second commenter  -->
+            <div class="comment2" >
+                <div class="info-rating2">
+                    <div class="user-info">
+                        <div class="display-photo">
+                            <img src="../pictures/dp3.png" class="display-photo">
+                        </div>
+                        <div class="username">
+                            &nbsp;<a href="chwenotchew.html" class="user-name">Chwenotchew</a>
+                        </div>
+                    </div>
+                    <div class="rate">
+                        <div class="star"><i class="bi bi-star-fill"></i></div>
+                        <div class="star"><i class="bi bi-star-fill"></i></div>
+                        <div class="star"><i class="bi bi-star-fill"></i></div>
+                        <div class="star"><i class="bi bi-star-fill"></i></div>
+                        <div class="star"><i class="bi bi-star-fill"></i></div>
+                    </div>
+                </div>
+                <p class="user-comment2">my toxic trait is thinking that i could beat every single one of these characters at chess even though i've never touched a single chess piece in my entire life. </p>
+                <div class="reaction2">
+                    <button class="thumbs-up"><i class="bi bi-hand-thumbs-up-fill"></i></button>
+                    <button class="thumbs-down"><i class="bi bi-hand-thumbs-down-fill"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="javascript/comment-section.js"> </script>
+
+</body>

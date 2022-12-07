@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+html,body{
+    display: flex;
+    height: 100vh;
+    place-items: center;
+    background: #fad6a5;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.main_div{
+    width: 365px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+}
+
+.bg-container{
+    width: 365px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+    height: 365px;
+    background-image: url("https://th.bing.com/th/id/R.6f7cc00cf40a4f07f41954a9ecfdcc47?rik=iF80OwFNesubjg&riu=http%3a%2f%2fbooks4all.org%2fwp-content%2fuploads%2f2017%2f06%2fbooks.jpg&ehk=PucveSbMt1feX%2b7oSE8alpNvOp7A6Yq85M1pxlFsm2E%3d&risl=&pid=ImgRaw&r=0");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /*background-attachment: fixed;*/
+}
+
+.main_div .title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.bg-container .title{
+    font-family: serif;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    color: white;
+    
+    backdrop-filter: blur(5px);
+}
+
+
+form{
+    margin-top: 25px;
+}
+
+form .input_box{
+    height: 50px;
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+}
+
+.input_box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    padding-left: 45px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    transition: all 0.3s ease;
+}
+
+.input_box input:focus{
+    border-color: #fad6a5;
+}
+
+.input_box .icon{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #989187;
+}
+
+form .option_div{
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.option_div .forget_div a{
+    font-size: 16px;
+    color: #c19a6b;
+}
+
+.button input{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    padding-left: 0;
+    background: #fad6a5;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.button input:hover{
+    background: #EECDA1;
+}
+
+form .sign-up{
+    text-align: center;
+    margin-top: 25px;
+}
+
+.sign-up a{
+    color: #c19a6b;
+}
+
+form a{
+    text-decoration: none;
+}
+
+form a:hover{
+    text-decoration: underline;
+}
+

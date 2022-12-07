@@ -1,0 +1,516 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    background-color: #fad6a5;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+html,body{
+    height: 100%;
+    place-items: center;
+    background: #fad6a5;
+}
+
+/* NAVBAR CSS */
+
+.navbar{
+    background-color: #453823;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+h1{
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 0px;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+    justify-content: flex-end;
+}
+
+li {
+    float: left;
+}
+
+.title{
+    font-family: serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: #fad6a5;
+    text-decoration: none;
+    margin: 5px;
+    padding-left: 10px;
+}
+
+.btn{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    outline: none;
+    background-color: #453823;
+    color: #fad6a5;
+    border: none;
+    height: 44;
+    width: 44;
+    padding: 7px 7px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-right: 10px;
+}
+
+.btn1{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    outline: none;
+    background-color: #453823;
+    color: #fad6a5;
+    border: none;
+    height: 44;
+    width: 44;
+    border-radius: 12px;
+    padding-top: 7px;
+    padding-bottom: 10px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 15px;
+    transition: 0.25s;
+    margin-right: 5px;
+    align-content: center;
+    font-size: 10;
+}
+
+.btn:hover, .btn1:hover{
+    background-color: #44291C;
+    color: #fad6a5;
+}
+
+.active{
+    background-color: #44291C;
+}
+
+.search {
+    border: 1px solid #d1d5db;
+    margin-right: 1px;
+    width: 250px;
+    padding: 7px 7px;
+    border-radius: 12px;
+}
+
+a.titlelink:visited, a.titlelink:link, a.titlelink:active{
+    font-family: serif;
+    font-weight: bold;
+    font-size: 50px;
+    color: #fad6a5;
+    text-decoration: none;
+    margin: 5px;
+}
+
+a.titlelink:hover{
+    color: #967969;
+}
+
+
+.main-div{
+    width: 100%;
+    background-color: #fad6a5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookinfo{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    
+    margin-top: 50;
+    margin-bottom: 20;
+}
+
+.book{
+    margin: 10;
+}
+
+.img{
+    width: 250;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30;
+    border-radius: 5px;
+    background-color: antiquewhite;
+}
+
+.info .title-rating{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 870;
+    
+}
+
+.info .title{
+    font-weight: bold;
+    font-family: serif;
+    font-size: 30;
+    color: #44291C;
+}
+
+.info .rating{
+    margin-top: 20;
+    font-size: 20;
+    display: flex;
+    flex-direction: row;
+    color: #44291C;
+}
+
+.review-score{
+    font-family: serif;
+    font-weight: bold;
+}
+
+.info .star{
+    color: goldenrod;
+}
+
+.info .author, .info .publi-date, .info .genre{
+    margin-left: 10;
+    font-size: 15;
+    color: #44291C;
+}
+
+.info .status{
+    margin-left: 10;
+    margin-bottom: 10;
+    color: #44291C;
+}
+
+.update{
+    border: #44291C;
+    background-color: #44291C;
+}
+
+.synopsis{
+    width: 850;
+    margin-left: 10;
+    margin-right: 20;
+    text-align: justify;
+    flex-wrap: wrap;
+    color: #44291C;
+}
+
+.info a{
+    text-decoration: none;
+}
+
+.info a:hover{
+    text-decoration: underline;
+}
+
+#new-status{
+    border-radius: 5px;
+}
+
+.btn-update{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    outline: none;
+    background-color: #453823;
+    color: #fad6a5;
+    border: none;
+    height: 30;
+    width: 70;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-right: 10px;
+}
+
+.btnclose{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    outline: none;
+    background-color: #453823;
+    color: #fad6a5;
+    border: none;
+    height: 40;
+    width: 70;
+    padding: 7px 7px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-right: 10px;
+}
+
+.btn-save{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    outline: none;
+    background-color: #453823;
+    color: #fad6a5;
+    border: none;
+    height: 40;
+    width: 125;
+    padding: 7px 7px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+    margin-right: 10px;
+}
+
+.comment-div{
+    width: 100%;
+}
+
+.comment-section{
+    background-color: antiquewhite;
+    margin-left: 150;
+    margin-right: 150;
+    margin-bottom: 100;
+    border-radius: 5px;
+    
+    padding: 0 0 50 0;
+}
+
+.add-comment{
+    background-color: #f8f8f8;
+    margin: 0 20 0 20;
+    border-radius: 8px;
+}
+
+.user{
+    margin: 20;
+    display: flex;
+    margin-bottom: 50;
+}
+
+#text{
+    margin-left: 10;
+    margin-top: 10;
+    width:565%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.submit{
+    margin-left: 10;
+    margin-top: 10;
+    margin-bottom: 10;
+    padding: 0;
+    width: 70;
+    height: 30;
+}
+
+
+.info-rating{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rate{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 10;
+    color: darkgoldenrod;
+}
+
+.user-info{
+    padding: 5;
+    display: flex;
+    align-items: center;
+}
+
+.user-comment{
+    margin-left: 52;
+    margin-right: 20;
+    margin-bottom: 10;
+}
+
+.display-photo{
+    border-radius: 50%;
+    width: 50;
+    height: 50;
+}
+
+.username a{
+    color: #453823;
+    text-decoration: none;
+}
+
+.username a:hover{
+    text-decoration: underline;
+    color: #44291C;
+    font-weight: bold;
+}
+
+.reaction{
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.thumbs-up, .thumbs-down{
+    outline: none;
+    border: none;
+    background-color: #f8f8f8;
+    padding: 15;
+}
+
+.thumbs-up:hover, .thumbs-down:hover{
+    color: #fad6a5;
+}
+
+
+.comment{
+    background-color: #f8f8f8;
+    margin-left: 50;
+    margin-right: 50;
+    border-radius: 5px;
+    margin-bottom: 10;
+}
+
+
+.comment2{
+    background-color: #f8f8f8;
+    margin-left: 50;
+    margin-right: 50;
+    border-radius: 5px;
+    margin-bottom: 10;
+}
+
+.info-rating2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.reaction2{
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.user-comment2{
+    margin-left: 52;
+    margin-right: 20;
+    margin-bottom: 10;
+}
+
+
+
+#writing{
+    border: none;
+    box-shadow: 0 5px 15px #B78E6C;
+    width: 100%;
+    padding: 10px;
+    background-color: #f8f8f8;
+    text-align: left;
+    border-radius: 5px;
+    margin-bottom: 10;
+    resize: none;
+    font-size: 20px;
+    font-family: serif;
+
+   
+    transition: .5s;
+  }
+
+  #post{
+    font-weight: 100px;
+    width: 100px;
+    margin-left: 50;
+   
+  }
+  #cancel{
+    font-weight: 100px;
+    width: 100px;
+  
+  }
+
+  .btn-commenting{
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  
+#stars{
+    margin-left: 70px;
+  }
+  
+  
+  .bi-star-fill.star1{
+    color: #daa520;
+    font-size: 20px;
+    
+  }
+  
+  .bi-star-fill.star2{
+    color: gray;
+    font-size: 20px;
+  }
+  .star-widget input{
+    display: none;
+  }
+  .star-widget{
+    display: inline-flex;
+    flex-direction: row-reverse;
+   
+     
+  }
+  
+  .star-widget input + label{
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  input:not(:checked) ~label:hover,
+  input:not(:checked) ~label:hover ~ label{
+  
+    color:#daa520;
+  } 
+  
+  
+  .star-widget input:checked ~ label{
+    color:#daa520;
+  }
+  
+  
+  .second-comment-footer{
+    display: none;
+  }
+  
+  
+a .genre{
+    text-decoration: underline;
+}
+  
