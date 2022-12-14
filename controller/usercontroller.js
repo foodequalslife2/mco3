@@ -3,11 +3,15 @@ const book = require('../models/books');
 
 const usercontroller={
     displayindex:function(req,res){
+        delete req.session.user
+        delete req.session.result
+        delete req.session.book_result
         res.render('index'); //before login
     },
 
     homepage:function(req,res){
         user.find({username:req.session.user},null, function(error, result){
+                console.log(result)
                 if(error){ console.log(error), res.redirect('/')}
                 else if(result.length==0){ res.redirect('/')}
                 else{ res.render('home')}
@@ -48,6 +52,9 @@ const usercontroller={
                             if (err){
                                 console.log(err);
                             } else{
+                                req.session.user = uname;
+                                req.session.result = result;
+                                req.session.bookarchive = book_result
                                 res.render('profilePage',{ 
                                     searchresult : result,
                                     bookarchive : book_result
@@ -71,8 +78,11 @@ const usercontroller={
         user.find({username:req.session.user},null, function(error, result){
             console.log(result)
             if(error){ console.log(error), res.redirect('/')}
-            else if(result){ res.redirect('/')}
-            else{ res.render('profilePage')}
+            else if(result.length==0){ res.redirect('/')}
+            else{ res.render('profilePage',{ 
+                searchresult : req.session.result,
+                bookarchive : req.session.bookarchive
+            })}
         })
     },
 
@@ -129,7 +139,7 @@ const usercontroller={
         user.find({username:req.session.user},null, function(error, result){
             console.log(result)
             if(error){ console.log(error), res.redirect('/')}
-            else if(result){ res.redirect('/')}
+            else if(result.length==0){ res.redirect('/')}
             else{ res.render('edit')}
         })
         // res.render('edit'); //edit profile page
