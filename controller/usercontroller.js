@@ -7,7 +7,7 @@ const usercontroller={
         delete req.session.user
         delete req.session.result
         delete req.session.book_result
-        res.render('index'); //before login
+        res.render('index'); //before login 
     },
 
     homepage:function(req,res){
