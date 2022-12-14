@@ -2,7 +2,6 @@ const user = require('../models/user');
 const book = require('../models/books');
 const bcrypt = require('bcrypt');
 
-
 const usercontroller={
     displayindex:function(req,res){
         delete req.session.user
@@ -33,10 +32,24 @@ const usercontroller={
         });
         users.save(function(err){
             if(err){
-                alert("Signup Failed. Please type everything properly.")
+                res.send(`<script>
+                    var rest = confirm("Signup Failed. Please come back to this page.");
+                    if(rest){
+                        window.location.href = "/"
+                    }else{
+                        window.location.href = "/"
+                    }
+                    </script>`)
                 console.log(err);
             }else{
-                res.redirect("/");
+                res.send(`<script>
+                    var rest = confirm("Signup Successful.");
+                    if(rest){
+                        window.location.href = "/"
+                    }else{
+                        window.location.href = "/"
+                    }
+                    </script>`)
             }
         });
     },
@@ -46,12 +59,26 @@ const usercontroller={
         
         user.find({ username: uname}, function (err, result) {
             if (err){
-                alert("Error.")
+                res.send(`<script>
+                    var rest = confirm("Error.");
+                    if(rest){
+                        window.location.href = "/"
+                    }else{
+                        window.location.href = "/"
+                    }
+                    </script>`)
                 console.log(err);
             } else{
                 if(result.length == 0) {
-                    alert("No Such User")
-                    res.render('index');
+                    res.send(`<script>
+                    var rest = confirm("Login Error. Please try again but with the correct credentials");
+                    if(rest){
+                        window.location.href = "/"
+                    }else{
+                        window.location.href = "/"
+                    }
+                    </script>`)
+                    // res.render('index');
                 }else{
                     if(bcrypt.compareSync(psw, result[0].password) ) {
                         book.find({}, function (err, book_result) {
@@ -69,7 +96,14 @@ const usercontroller={
                             }
                         });
                     }else{
-                        alert("Incorrect Password")
+                        res.send(`<script>
+                        var rest = confirm("Incorrect Password.");
+                        if(rest){
+                            window.location.href = "/"
+                        }else{
+                            window.location.href = "/"
+                        }
+                        </script>`)
                         res.render('index');
                     }
                 }
@@ -78,8 +112,14 @@ const usercontroller={
     },
 
     displaychangepw:function(req,res){
-        alert("Successfully Changed Password.")
-        res.render('changePassword');
+        res.send(`<script>
+                    var rest = confirm("Login Error. Please try again but with the correct credentials");
+                    if(rest){
+                        window.location.href = "/"
+                    }else{
+                        window.location.href = "/"
+                    }
+                    </script>`)
     },
 
     displayprofilepage:function(req,res){
