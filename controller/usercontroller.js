@@ -1,13 +1,19 @@
 const user = require('../models/user');
 const book = require('../models/books');
+const bcrypt = require('bcrypt');
+
 
 const usercontroller={
     displayindex:function(req,res){
+        delete req.session.user
+        delete req.session.result
+        delete req.session.book_result
         res.render('index'); //before login
     },
 
     homepage:function(req,res){
         user.find({username:req.session.user},null, function(error, result){
+                console.log(result)
                 if(error){ console.log(error), res.redirect('/')}
                 else if(result.length==0){ res.redirect('/')}
                 else{ res.render('home')}
@@ -19,13 +25,15 @@ const usercontroller={
     },
 
     storesignup:function(req,res){
+        const hash = bcrypt.hashSync(req.body.password, 10)
         const users = new user({
             email: req.body.email,
             username: req.body.username,
-            password: req.body.password,
+            password: hash,
         });
         users.save(function(err){
             if(err){
+                alert("Signup Failed. Please type everything properly")
                 console.log(err);
             }else{
                 res.redirect("/");
@@ -35,19 +43,23 @@ const usercontroller={
     loginuser:function(req,res){
         uname = req.body.username;
         psw = req.body.password;
-    
+        
         user.find({ username: uname}, function (err, result) {
             if (err){
                 console.log(err);
             } else{
                 if(result.length == 0) {
+                    alert("No such user")
                     res.render('index');
                 }else{
-                    if(psw == result[0].password) {
+                    if(bcrypt.compareSync(psw, result[0].password) ) {
                         book.find({}, function (err, book_result) {
                             if (err){
                                 console.log(err);
                             } else{
+                                req.session.user = uname;
+                                req.session.result = result;
+                                req.session.bookarchive = book_result
                                 res.render('profilePage',{ 
                                     searchresult : result,
                                     bookarchive : book_result
@@ -56,6 +68,7 @@ const usercontroller={
                             }
                         });
                     }else{
+                        alert("Incorrect password bozo")
                         res.render('index');
                     }
                 }
@@ -64,6 +77,7 @@ const usercontroller={
     },
 
     displaychangepw:function(req,res){
+        alert("Successfully changed password")
         res.render('changePassword');
     },
 
@@ -71,8 +85,11 @@ const usercontroller={
         user.find({username:req.session.user},null, function(error, result){
             console.log(result)
             if(error){ console.log(error), res.redirect('/')}
-            else if(result){ res.redirect('/')}
-            else{ res.render('profilePage')}
+            else if(result.length==0){ res.redirect('/')}
+            else{ res.render('profilePage',{ 
+                searchresult : req.session.result,
+                bookarchive : req.session.bookarchive
+            })}
         })
     },
 
@@ -129,7 +146,7 @@ const usercontroller={
         user.find({username:req.session.user},null, function(error, result){
             console.log(result)
             if(error){ console.log(error), res.redirect('/')}
-            else if(result){ res.redirect('/')}
+            else if(result.length==0){ res.redirect('/')}
             else{ res.render('edit')}
         })
         // res.render('edit'); //edit profile page
