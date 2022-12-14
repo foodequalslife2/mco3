@@ -33,7 +33,7 @@ const usercontroller={
         });
         users.save(function(err){
             if(err){
-                alert("Signup Failed. Please type everything properly")
+                alert("Signup Failed. Please type everything properly.")
                 console.log(err);
             }else{
                 res.redirect("/");
@@ -46,10 +46,11 @@ const usercontroller={
         
         user.find({ username: uname}, function (err, result) {
             if (err){
+                alert("Error.")
                 console.log(err);
             } else{
                 if(result.length == 0) {
-                    alert("No such user")
+                    alert("No Such User")
                     res.render('index');
                 }else{
                     if(bcrypt.compareSync(psw, result[0].password) ) {
@@ -68,7 +69,7 @@ const usercontroller={
                             }
                         });
                     }else{
-                        alert("Incorrect password bozo")
+                        alert("Incorrect Password")
                         res.render('index');
                     }
                 }
@@ -77,7 +78,7 @@ const usercontroller={
     },
 
     displaychangepw:function(req,res){
-        alert("Successfully changed password")
+        alert("Successfully Changed Password.")
         res.render('changePassword');
     },
 
@@ -86,9 +87,9 @@ const usercontroller={
             console.log(result)
             if(error){ console.log(error), res.redirect('/')}
             else if(result.length==0){ res.redirect('/')}
-            else{ res.render('profilePage',{ 
-                searchresult : req.session.result,
-                bookarchive : req.session.bookarchive
+            else{ res.render('profilePage',{          //
+                searchresult : req.session.result,    //
+                bookarchive : req.session.bookarchive //
             })}
         })
     },
@@ -149,7 +150,6 @@ const usercontroller={
             else if(result.length==0){ res.redirect('/')}
             else{ res.render('edit')}
         })
-        // res.render('edit'); //edit profile page
     },
 
     searchbook:function(req,res){
