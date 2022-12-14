@@ -8,9 +8,8 @@ const usercontroller={
 
     homepage:function(req,res){
         user.find({username:req.session.user},null, function(error, result){
-                console.log(result)
                 if(error){ console.log(error), res.redirect('/')}
-                else if(result){ res.redirect('/')}
+                else if(result.length==0){ res.redirect('/')}
                 else{ res.render('home')}
         })
     },
@@ -107,7 +106,6 @@ const usercontroller={
                                                 console.log(err);
                                             } 
                                             else{
-                                                console.log(COA);
                                                 res.render('genre',{
                                                     genre1:COA,
                                                     genre2:action,

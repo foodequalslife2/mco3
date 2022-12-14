@@ -12,13 +12,14 @@ const session = require("express-session");
 
 const port = process.env.PORT || 3000; 
 
-mongoose.connect(process.env.MONGODB_URI || process.env.DB_URL, {useNewUrlParser: true});
+mongoose.connect(process.env.MONGO_URI || process.env.DB_URL, {useNewUrlParser: true});
 
 app.use(session({
     secret:"Password",
     cookie: {secure:false, maxAge:30000, expires:false, httpOnly:true},
     resave: false,
-    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI || process.env.DB_URL }),
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }), //Deployed
+    // store: MongoStore.create({ mongoUrl: process.env.DB_URL }), //Local
     saveUninitialized: true,
     rolling: true
 }))
