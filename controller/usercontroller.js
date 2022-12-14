@@ -7,7 +7,12 @@ const usercontroller={
     },
 
     homepage:function(req,res){
-        res.render('home');
+        user.find({username:req.session.user},null, function(error, result){
+                console.log(result)
+                if(error){ console.log(error), res.redirect('/')}
+                else if(result){ res.redirect('/')}
+                else{ res.render('home')}
+        })
     },
     
     displaysignup:function(req,res){
@@ -44,17 +49,13 @@ const usercontroller={
                             if (err){
                                 console.log(err);
                             } else{
-
                                 res.render('profilePage',{ 
                                     searchresult : result,
                                     bookarchive : book_result
                                 });
                                
-
                             }
                         });
-                    
-                       
                     }else{
                         res.render('index');
                     }
@@ -68,11 +69,15 @@ const usercontroller={
     },
 
     displayprofilepage:function(req,res){
-        res.render('profilePage'); 
+        user.find({username:req.session.user},null, function(error, result){
+            console.log(result)
+            if(error){ console.log(error), res.redirect('/')}
+            else if(result){ res.redirect('/')}
+            else{ res.render('profilePage')}
+        })
     },
 
     displaygenre:function(req,res){
-        
         book.find({bookgenre:"Coming of Age"},function(err,COA){
             if (err){
                 console.log(err);
@@ -101,10 +106,9 @@ const usercontroller={
                                             if (err){
                                                 console.log(err);
                                             } 
-                                            else
-                                            {
+                                            else{
                                                 console.log(COA);
-                                               res.render('genre',{
+                                                res.render('genre',{
                                                     genre1:COA,
                                                     genre2:action,
                                                     genre3:romance,
@@ -124,11 +128,18 @@ const usercontroller={
     },
 
     displayedit:function(req,res){
-        res.render('edit'); //edit profile page
+        user.find({username:req.session.user},null, function(error, result){
+            console.log(result)
+            if(error){ console.log(error), res.redirect('/')}
+            else if(result){ res.redirect('/')}
+            else{ res.render('edit')}
+        })
+        // res.render('edit'); //edit profile page
     },
 
     searchbook:function(req,res){
         const searchtext = req.body.search;
+        
         console.log(req.body.search);
         book.find({booktitle:searchtext},function(err,result){
             if (err){
